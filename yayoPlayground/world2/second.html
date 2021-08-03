@@ -1,0 +1,43 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="reset.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <!-- <p>{{ msg }}</p> -->
+    <div>
+      <input
+        v-model="inputText"
+        @submit.prevent="addTodo"
+        type="text"
+      >
+      <button @click="addTodo" type="button">add</button>
+    </div>
+    <ul>
+      <li v-for="(todo, i) in todos">
+        <p>
+          <input type="checkbox" v-model="todo.checked">
+          <span>
+            {{ todo.text }}
+          </span>
+        </p>
+        <p>
+          <span>
+            {{ todo.time.toLocaleString() }}
+          </span>
+          <button
+            @click="removeTodo(i)"
+            type="button"
+          >remove</button>
+        </p>
+      </li>
+    </ul>
+  </div>
+
+  <script src="second.js"></script>
+</body>
+
+</html>
