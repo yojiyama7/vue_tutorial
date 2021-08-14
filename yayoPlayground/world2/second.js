@@ -43,6 +43,7 @@ var app = new Vue({
     },
     saveTodos: function() {
       const parsed = JSON.stringify(this.todos);
+      console.log(parsed)
       localStorage.setItem('todos', parsed);
     },
   },
